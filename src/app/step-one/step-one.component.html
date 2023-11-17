@@ -1,0 +1,100 @@
+<div class="flex flex-col gap-2 p-3">
+  <span class="text-4xl text-blue-950 font-black">Personal Info</span>
+  <span class="text-xl text-slate-600 font-bold">
+    Please provide your name, email address and phone number.
+  </span>
+
+  <form class="mt-5" (ngSubmit)="onSubmit()" [formGroup]="userForm">
+    <div class="flex flex-col gap-5">
+      <div class="flex flex-col">
+        <label for="name" class="text-lg text-blue-950 font-bold">Name</label>
+        <span
+          *ngIf="
+            userForm.controls.name.invalid &&
+            (userForm.controls.name.dirty || userForm.controls.name.touched)
+          "
+          class="text-red-600 font-bold text-base"
+        >
+          Invalid Field
+        </span>
+        <input
+          placeholder="e.g Stephen King"
+          [ngClass]="
+            userForm.controls.name.invalid &&
+            (userForm.controls.name.dirty || userForm.controls.name.touched)
+              ? 'border border-red-500 py-2 px-5 bg-inherit rounded-lg placeholder:font-bold'
+              : 'border border-slate-300 py-2 px-5 bg-inherit rounded-lg placeholder:font-bold'
+          "
+          [formControl]="userForm.controls.name"
+          id="name"
+          type="text"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="email" class="text-lg text-blue-950 font-bold"
+          >Email Address</label
+        >
+        <span
+          *ngIf="
+            userForm.controls.email.invalid &&
+            (userForm.controls.email.dirty || userForm.controls.email.touched)
+          "
+          class="text-red-600 font-bold text-base"
+        >
+          Invalid Field
+        </span>
+        <input
+          placeholder="e.g stephenking@lorem.com"
+          [ngClass]="
+            userForm.controls.email.invalid &&
+            (userForm.controls.email.dirty || userForm.controls.email.touched)
+              ? 'border border-red-500 py-2 px-5 bg-inherit rounded-lg placeholder:font-bold'
+              : 'border border-slate-300 py-2 px-5 bg-inherit rounded-lg placeholder:font-bold'
+          "
+          [formControl]="userForm.controls.email"
+          id="email"
+          type="text"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="phone" class="text-lg text-blue-950 font-bold"
+          >Phone Number</label
+        >
+        <span
+          *ngIf="
+            userForm.controls.phone.invalid &&
+            (userForm.controls.phone.dirty || userForm.controls.phone.touched)
+          "
+          class="text-red-600 font-bold text-base"
+        >
+          Invalid Field
+        </span>
+        <input
+          placeholder="e.g +1 234 567 890"
+          [ngClass]="
+            userForm.controls.phone.invalid &&
+            (userForm.controls.phone.dirty || userForm.controls.phone.touched)
+              ? 'border border-red-500 py-2 px-5 bg-inherit rounded-lg placeholder:font-bold'
+              : 'border border-slate-300 py-2 px-5 bg-inherit rounded-lg placeholder:font-bold'
+          "
+          [formControl]="userForm.controls.phone"
+          id="phone"
+          type="text"
+        />
+      </div>
+      <div class="flex justify-end">
+        <button
+          class="bg-blue-950 text-white py-2 px-5 rounded-lg font-bold"
+          [ngClass]="userForm.valid ? '' : 'bg-opacity-40'"
+          type="submit"
+          [disabled]="!userForm.valid"
+          routerLink="/2"
+        >
+          Next Step
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { FormService } from './services/form.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'multistep-form';
+  constructor(public readonly service: FormService) {}
+
+  steps: number[] = [1, 2, 3, 4];
 }

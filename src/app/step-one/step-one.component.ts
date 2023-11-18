@@ -23,7 +23,8 @@ export class StepOneComponent {
     ]),
   });
 
-  onSubmit() {
+  onSubmit(event: Event) {
+    event.preventDefault();
     if (
       this.userForm.controls.name.value !== null &&
       this.userForm.controls.email.value !== null &&

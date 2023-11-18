@@ -4,8 +4,8 @@ import { StepOneComponent } from './step-one/step-one.component';
 import { StepTwoComponent } from './step-two/step-two.component';
 
 const routes: Routes = [
-  { path: '1', component: StepOneComponent },
-  { path: '2', component: StepTwoComponent },
+  { path: '1', component: StepOneComponent, title: 'First Step' },
+  { path: '2', component: StepTwoComponent, title: 'Second step' },
 ];
 
 @NgModule({

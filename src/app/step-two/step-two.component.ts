@@ -13,7 +13,7 @@ export class StepTwoComponent implements OnInit {
 
   planList!: Plan[];
   yearlyBilling!: boolean;
-  isPlanSelected: boolean = false;
+  isPlanSelected!: boolean;
 
   selectedPlan: SelectPlan = {
     type: this.service.completeForm.plan.type,
@@ -24,6 +24,7 @@ export class StepTwoComponent implements OnInit {
   ngOnInit(): void {
     this.planList = plans;
     this.yearlyBilling = yearlyBilling;
+    this.isPlanSelected = this.service.isPlanSelected;
   }
 
   toggleBilling() {
@@ -55,6 +56,6 @@ export class StepTwoComponent implements OnInit {
   }
 
   goBack() {
-    this.service.backToStepOne();
+    this.service.backToStepOne(this.selectedPlan);
   }
 }

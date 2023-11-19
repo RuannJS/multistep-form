@@ -9,6 +9,8 @@ import { SelectPlan } from '../models/plan-model';
 export class FormService {
   constructor(private readonly router: Router) {}
 
+  isPlanSelected: boolean = false;
+
   completeForm: FormModel = {
     user: { name: '', email: '', phone: '' },
     plan: { billing: '', type: '', price: 0 },
@@ -20,12 +22,16 @@ export class FormService {
     this.router.navigate(['2']);
   }
 
-  backToStepOne() {
+  backToStepOne(plan: SelectPlan) {
+    this.completeForm.plan = plan;
+    this.isPlanSelected = true;
+
     this.router.navigate(['1']);
   }
 
   stepTwo(plan: SelectPlan) {
     this.completeForm.plan = plan;
+    this.isPlanSelected = true;
     this.router.navigate(['3']);
   }
 

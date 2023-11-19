@@ -59,24 +59,34 @@
     >
   </div>
 
-  <div class="flex flex-col justify-start">
-    <div
-      class="flex flex-row gap-2 justify-evenly mt-5 items-center"
-      *ngIf="isPlanSelected"
-    >
+  <div *ngIf="isPlanSelected" class="flex flex-col justify-start">
+    <div class="flex flex-row gap-2 justify-evenly mt-5 items-center">
       <span class="text-slate-400 text-base">Current billing:</span>
       <span class="text-blue-950 text-lg font-bold">{{
         selectedPlan.billing | uppercase
       }}</span>
     </div>
 
-    <div
-      class="flex flex-row gap-2 justify-evenly mt-5 items-center"
-      *ngIf="isPlanSelected"
-    >
+    <div class="flex flex-row gap-2 justify-evenly mt-5 items-center">
       <span class="text-slate-400 text-base flex">Current plan:</span>
       <span class="text-blue-950 text-lg font-bold">{{
         selectedPlan.type | uppercase
+      }}</span>
+    </div>
+  </div>
+
+  <div *ngIf="!isPlanSelected" class="flex flex-col justify-start">
+    <div class="flex flex-row gap-2 justify-evenly mt-5 items-center">
+      <span class="text-slate-400 text-base">Current billing:</span>
+      <span class="text-blue-950 text-lg font-bold">{{
+        "none" | uppercase
+      }}</span>
+    </div>
+
+    <div class="flex flex-row gap-2 justify-evenly mt-5 items-center">
+      <span class="text-slate-400 text-base flex">Current plan:</span>
+      <span class="text-blue-950 text-lg font-bold">{{
+        "none" | uppercase
       }}</span>
     </div>
   </div>

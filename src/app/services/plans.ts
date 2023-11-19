@@ -1,23 +1,21 @@
 import { Plan } from '../models/plan-model';
-import { BillingType } from '../models/plan-model';
+
+export const yearlyBilling: boolean = false;
 
 export const plans: Plan[] = [
   {
-    name: 'Arcade',
+    type: 'Arcade',
     price: 9,
     icon: '../assets/icon-arcade.svg',
-    billing: BillingType.monthly,
   },
   {
-    name: 'Advanced',
+    type: 'Advanced',
     price: 12,
     icon: '../assets/icon-advanced.svg',
-    billing: BillingType.monthly,
   },
   {
-    name: 'Pro',
+    type: 'Pro',
     price: 15,
     icon: '../assets/icon-pro.svg',
-    billing: BillingType.monthly,
   },
 ];

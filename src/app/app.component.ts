@@ -9,5 +9,5 @@ import { FormService } from './services/form.service';
 export class AppComponent {
   constructor(public readonly service: FormService) {}
 
-  steps: number[] = [1, 2, 3, 4];
+  steps: string[] = ['1', '2', '3', '4'];
 }

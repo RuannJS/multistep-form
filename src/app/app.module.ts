@@ -7,9 +7,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { StepTwoComponent } from './step-two/step-two.component';
+import { StepThreeComponent } from './step-three/step-three.component';
 
 @NgModule({
-  declarations: [AppComponent, StepOneComponent, StepTwoComponent],
+  declarations: [AppComponent, StepOneComponent, StepTwoComponent, StepThreeComponent],
   imports: [
     BrowserModule,
     NgOptimizedImage,

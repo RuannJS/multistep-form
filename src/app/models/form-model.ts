@@ -8,7 +8,7 @@ export interface FormModel {
   plan: {
     type: string;
     billing: string;
-    price: string;
+    price: number;
   };
 
   addons: {

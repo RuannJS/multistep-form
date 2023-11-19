@@ -28,6 +28,7 @@
           [formControl]="userForm.controls.name"
           id="name"
           type="text"
+          [value]="userForm.controls.name.value"
         />
       </div>
 
@@ -55,6 +56,7 @@
           [formControl]="userForm.controls.email"
           id="email"
           type="text"
+          [value]="userForm.controls.email.value"
         />
       </div>
 
@@ -82,6 +84,7 @@
           [formControl]="userForm.controls.phone"
           id="phone"
           type="text"
+          [value]="userForm.controls.phone.value"
         />
       </div>
       <div class="flex justify-end">

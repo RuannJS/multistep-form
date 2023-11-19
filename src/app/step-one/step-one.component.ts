@@ -8,12 +8,17 @@ import { FormService } from '../services/form.service';
   styleUrls: ['./step-one.component.css'],
 })
 export class StepOneComponent {
-  constructor(private readonly service: FormService) {}
+  constructor(public readonly service: FormService) {}
 
   userForm = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    phone: new FormControl('', [
+    name: new FormControl(this.service.completeForm.user.name, [
+      Validators.required,
+    ]),
+    email: new FormControl(this.service.completeForm.user.email, [
+      Validators.required,
+      Validators.email,
+    ]),
+    phone: new FormControl(this.service.completeForm.user.phone, [
       Validators.required,
       Validators.pattern(
         '^([+]?[s0-9]+)?(d{3}|[(]?[0-9]+[)])?([-]?[s]?[0-9])+$'

@@ -1,11 +1,11 @@
-export enum BillingType {
-  monthly = 'monthly',
-  yearly = 'yearly',
-}
-
 export interface Plan {
-  name: string;
+  type: string;
   price: number;
   icon: string;
-  billing: BillingType;
+}
+
+export interface SelectPlan {
+  type: string;
+  price: number;
+  billing: string;
 }

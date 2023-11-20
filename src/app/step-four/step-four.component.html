@@ -1,1 +1,131 @@
-<p>step-four works!</p>
+<div class="flex flex-col gap-2 p-3">
+  <span class="text-4xl text-blue-950 font-black">Finishing up</span>
+  <span class="text-xl text-slate-600 font-bold">
+    Double-check everything looks OK before confirming
+  </span>
+
+  <div class="rounded-lg bg-slate-100 flex flex-col p-3">
+    <div class="flex flex-row justify-between items-center p-3">
+      <div class="flex flex-col">
+        <span class="text-base text-blue-950 font-black"
+          >{{ plan.type }} ({{ plan.billing }})</span
+        >
+        <span class="underline text-sm text-slate-400">Change</span>
+      </div>
+
+      <span
+        class="text-base text-blue-950 font-black"
+        *ngIf="plan.billing === 'yearly'"
+        >{{ plan.price | currency : "USD" : "symbol" : "1.0-0" }}/yr</span
+      >
+      <span
+        class="text-base text-blue-950 font-black"
+        *ngIf="plan.billing === 'monthly'"
+        >{{ plan.price | currency : "USD" : "symbol" : "1.0-0" }}/mo</span
+      >
+    </div>
+    <hr class="border-slate-300 mx-1" />
+
+    <!-- MONTHLY BILLING -->
+    <div class="p-3" *ngIf="plan.billing === 'monthly'">
+      <div *ngIf="addons.service.checked" class="flex flex-row justify-between">
+        <span class="text-slate-400 font-medium text-base">Online service</span>
+        <span class="text-blue-950 font-bold text-base"
+          >+{{
+            addons.service.price | currency : "USD" : "symbol" : "1.0-0"
+          }}/mo</span
+        >
+      </div>
+      <div *ngIf="addons.larger.checked" class="flex flex-row justify-between">
+        <span class="text-slate-400 font-medium text-base">Larger storage</span>
+        <span class="text-blue-950 font-bold text-base"
+          >+{{
+            addons.larger.price | currency : "USD" : "symbol" : "1.0-0"
+          }}/mo</span
+        >
+      </div>
+      <div *ngIf="addons.profile.checked" class="flex flex-row justify-between">
+        <span class="text-slate-400 font-medium text-base"
+          >Customizable profile</span
+        >
+        <span class="text-blue-950 font-bold text-base"
+          >+{{
+            addons.profile.price | currency : "USD" : "symbol" : "1.0-0"
+          }}/mo</span
+        >
+      </div>
+    </div>
+
+    <!-- YEARLY -->
+
+    <div class="p-3" *ngIf="plan.billing === 'yearly'">
+      <div *ngIf="addons.service.checked" class="flex flex-row justify-between">
+        <span class="text-slate-400 font-medium text-base">Online service</span>
+        <span class="text-blue-950 font-bold text-base"
+          >+{{
+            addons.service.price | currency : "USD" : "symbol" : "1.0-0"
+          }}/yr</span
+        >
+      </div>
+      <div *ngIf="addons.larger.checked" class="flex flex-row justify-between">
+        <span class="text-slate-400 font-medium text-base">Larger storage</span>
+        <span class="text-blue-950 font-bold text-base"
+          >+{{
+            addons.larger.price | currency : "USD" : "symbol" : "1.0-0"
+          }}/yr</span
+        >
+      </div>
+      <div *ngIf="addons.profile.checked" class="flex flex-row justify-between">
+        <span class="text-slate-400 font-medium text-base"
+          >Customizable profile</span
+        >
+        <span class="text-blue-950 font-bold text-base"
+          >+{{
+            addons.profile.price | currency : "USD" : "symbol" : "1.0-0"
+          }}/yr</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-row justify-between p-6">
+    <span
+      class="text-slate-500 text-base font-medium"
+      *ngIf="plan.billing === 'monthly'"
+      >Total (per month)</span
+    >
+    <span
+      class="text-slate-500 text-base font-medium"
+      *ngIf="plan.billing === 'yearly'"
+      >Total (per year)</span
+    >
+
+    <span
+      class="text-lg font-black text-purple-700"
+      *ngIf="plan.billing === 'monthly'"
+      >{{ getTotalPrice() | currency : "USD" : "symbol" : "1.0-0" }}/mo</span
+    >
+
+    <span
+      class="text-lg font-black text-purple-700"
+      *ngIf="plan.billing === 'yearly'"
+      >{{ getTotalPrice() | currency : "USD" : "symbol" : "1.0-0" }}/yr</span
+    >
+  </div>
+
+  <div class="py-3 px-3 rounded-lg flex flex-row justify-between mt-10">
+    <button
+      class="text-slate-300 font-semibold border border-slate-200 rounded-lg py-2 px-3"
+      type="button"
+    >
+      Go Back
+    </button>
+
+    <button
+      class="bg-purple-700 text-white py-2 px-5 rounded-lg font-bold"
+      type="submit"
+    >
+      Confirm
+    </button>
+  </div>
+</div>

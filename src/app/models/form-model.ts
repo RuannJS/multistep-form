@@ -12,8 +12,17 @@ export interface FormModel {
   };
 
   addons: {
-    service: boolean;
-    larger: boolean;
-    profile: boolean;
+    service: {
+      price: number;
+      checked: boolean;
+    };
+    larger: {
+      price: number;
+      checked: boolean;
+    };
+    profile: {
+      price: number;
+      checked: boolean;
+    };
   };
 }

@@ -1,1 +1,61 @@
-<p>step-three works!</p>
+<div class="flex flex-col gap-2 p-3">
+  <span class="text-4xl text-blue-950 font-black">Pick add-ons</span>
+  <span class="text-xl text-slate-600 font-bold">
+    Add-ons help enhance your gaming experience.
+  </span>
+
+  <div class="flex flex-col gap-5">
+    <button
+      class="flex flex-row justify-evenly items-center border border-slate-400 py-5 rounded-lg"
+      *ngFor="let addon of addons"
+      type="button"
+      [ngClass]="addon.checked ? 'border-purple-500 bg-purple-100' : ''"
+      (click)="toggleAddon(addon)"
+    >
+      <input
+        [ngClass]="addon.type === 'Larger storage' ? 'mr-6' : 'mr-2'"
+        class="accent-purple-500"
+        [(ngModel)]="addon.checked"
+        type="checkbox"
+        name="addon"
+      />
+      <div class="flex flex-col">
+        <span class="text-base text-blue-950 font-black flex justify-start"
+          >{{ addon.type }}
+        </span>
+
+        <span class="text-xs text-slate-400 font-black">{{ addon.text }} </span>
+      </div>
+      <span
+        *ngIf="billing === 'monthly'"
+        class="text-purple-500 text-lg font-bold flex justify-end"
+        >+{{ addon.price | currency : "USD" : "symbol" : "1.0-0" }}/mo</span
+      >
+      <span
+        *ngIf="billing === 'yearly'"
+        class="text-purple-500 text-lg font-bold flex justify-end"
+        >+{{
+          addon.price * 10 | currency : "USD" : "symbol" : "1.0-0"
+        }}/yr</span
+      >
+    </button>
+  </div>
+
+  <div class="py-3 px-3 rounded-lg flex flex-row justify-between mt-10">
+    <button
+      (click)="goBack()"
+      class="text-slate-300 font-semibold border border-slate-200 rounded-lg py-2 px-3"
+      type="button"
+    >
+      Go Back
+    </button>
+
+    <button
+      (click)="onSubmit(addons)"
+      class="bg-blue-950 text-white py-2 px-5 rounded-lg font-bold"
+      type="submit"
+    >
+      Next Step
+    </button>
+  </div>
+</div>

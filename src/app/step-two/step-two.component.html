@@ -5,6 +5,7 @@
   </span>
 
   <div class="flex flex-col gap-10 mt-5 xl:gap-5">
+    <!-- PLAN ITERATION  -->
     <button
       *ngFor="let plan of planList"
       class="flex flex-row gap-5 items-center rounded-xl py-4 px-5 border border-slate-400 focus:bg-purple-100 focus:border-purple-500"
@@ -15,11 +16,15 @@
         <span class="flex justify-start text-xl text-blue-950 font-black">{{
           plan.type
         }}</span>
+
+        <!-- MONTHLY BILLING -->
         <span
           class="flex justify-start text-lg text-slate-400"
           *ngIf="!yearlyBilling"
           >{{ plan.price | currency : "USD" : "symbol" : "1.0-0" }}/mo</span
         >
+
+        <!-- YEARLY BILLING -->
         <span
           class="flex justify-start text-lg text-slate-400"
           *ngIf="yearlyBilling"
@@ -27,6 +32,9 @@
             plan.price * 10 | currency : "USD" : "symbol" : "1.0-0"
           }}/yr</span
         >
+
+        <!-- IF YEARLY BILLING, SHOW 2 MONTHS FREE TEXT -->
+        <!-- 1280px LESS -->
         <span
           *ngIf="yearlyBilling"
           class="text-sm text-blue-950 font-semibold xl:hidden"
@@ -34,6 +42,8 @@
         >
       </div>
 
+      <!-- IF YEARLY BILLING, SHOW 2 MONTHS FREE TEXT -->
+      <!-- 1280px or GREATER -->
       <span
         *ngIf="yearlyBilling"
         class="text-sm text-blue-950 font-semibold text-end ml-28"
@@ -41,10 +51,14 @@
       >
     </button>
   </div>
+
+  <!-- MONTHLY BILLING -->
   <div class="flex flex-row justify-evenly mt-5 items-center xl:mt-0">
     <span *ngIf="!yearlyBilling" class="text-lg text-blue-950 font-bold"
       >Monthly</span
     >
+
+    <!-- YEARLY BILLING -->
     <span *ngIf="yearlyBilling" class="text-base text-slate-400 font-semibold"
       >Monthly</span
     >
@@ -59,14 +73,19 @@
         class="w-11 h-6 bg-blue-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-blue-600 peer-checked:bg-blue-600"
       ></div>
     </label>
+
+    <!-- YEARLY BILLING -->
     <span *ngIf="yearlyBilling" class="text-lg text-blue-950 font-bold"
       >Yearly</span
     >
+
+    <!-- MONTHLY BILLING -->
     <span *ngIf="!yearlyBilling" class="text-base text-slate-400 font-semibold"
       >Yearly</span
     >
   </div>
 
+  <!-- IF PLAN IS SELECTED, CHANGES TEXT TO PLAN INFORMATION-->
   <div
     *ngIf="isPlanSelected"
     class="flex flex-col justify-start xl:flex-row xl:justify-center xl:gap-2"
@@ -86,6 +105,7 @@
     </div>
   </div>
 
+  <!-- IF PLAN IS NOT SELECTED, CHANGES TEXT TO NONE -->
   <div
     *ngIf="!isPlanSelected"
     class="flex flex-col justify-start xl:flex-row xl:justify-center xl:gap-2"
@@ -104,6 +124,8 @@
       }}</span>
     </div>
   </div>
+
+  <!-- BUTTONS -->
 
   <div class="py-3 px-3 rounded-lg flex flex-row justify-between mt-10 xl:mt-0">
     <button

@@ -10,6 +10,7 @@ import { FormService } from '../services/form.service';
 export class StepOneComponent {
   constructor(public readonly service: FormService) {}
 
+  // REACTIVE FORM
   userForm = new FormGroup({
     name: new FormControl(this.service.completeForm.user.name, [
       Validators.required,
@@ -28,6 +29,7 @@ export class StepOneComponent {
     ]),
   });
 
+  // SUBMIT BUTTON
   onSubmit(event: Event) {
     event.preventDefault();
     if (

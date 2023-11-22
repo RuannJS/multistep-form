@@ -27,6 +27,7 @@
   </div>
   <article class="absolute top-32 px-10 lg:px-28 lg:top-52 xl:hidden">
     <div class="bg-white p-3 rounded-lg lg:px-28">
+      <!-- ROUTER OUTLET IS ONLY RENDERED WHEN SCREEN WIDTH IS < 1280 -->
       <router-outlet *ngIf="1280 > getScreenWidth"></router-outlet>
     </div>
   </article>
@@ -71,6 +72,7 @@
         </div>
       </div>
 
+      <!-- ROUTER OUTLET IS ONLY RENDERED WHEN SCREEN WIDTH IS > 1280 -->
       <div class="p-10 2xl:p-24">
         <router-outlet *ngIf="getScreenWidth >= 1280"></router-outlet>
       </div>

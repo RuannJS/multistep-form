@@ -4,10 +4,12 @@
     Please provide your name, email address and phone number.
   </span>
 
+  <!-- REACTIVE FORM -->
   <form class="mt-5" (ngSubmit)="onSubmit($event)" [formGroup]="userForm">
     <div class="flex flex-col gap-5">
       <div class="flex flex-col">
         <label for="name" class="text-lg text-blue-950 font-bold">Name</label>
+        <!-- VALIDATION -->
         <span
           *ngIf="
             userForm.controls.name.invalid &&
@@ -36,6 +38,7 @@
         <label for="email" class="text-lg text-blue-950 font-bold"
           >Email Address</label
         >
+        <!-- VALIDATION -->
         <span
           *ngIf="
             userForm.controls.email.invalid &&
@@ -64,6 +67,7 @@
         <label for="phone" class="text-lg text-blue-950 font-bold"
           >Phone Number</label
         >
+        <!-- VALIDATION -->
         <span
           *ngIf="
             userForm.controls.phone.invalid &&

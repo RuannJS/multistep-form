@@ -15,11 +15,14 @@
         >
       </div>
 
+      <!-- YEARLY BILLING -->
       <span
         class="text-base text-blue-950 font-black"
         *ngIf="plan.billing === 'yearly'"
         >{{ plan.price | currency : "USD" : "symbol" : "1.0-0" }}/yr</span
       >
+
+      <!-- MONTHLY BILLING -->
       <span
         class="text-base text-blue-950 font-black"
         *ngIf="plan.billing === 'monthly'"
@@ -58,7 +61,7 @@
       </div>
     </div>
 
-    <!-- YEARLY -->
+    <!-- YEARLY BILLING -->
 
     <div class="p-3" *ngIf="plan.billing === 'yearly'">
       <div *ngIf="addons.service.checked" class="flex flex-row justify-between">
@@ -89,6 +92,8 @@
       </div>
     </div>
   </div>
+
+  <!-- CHANGES TEXT WHETHER PLAN IS YEARLY OR MONTHLY -->
 
   <div class="flex flex-row justify-between p-6">
     <span

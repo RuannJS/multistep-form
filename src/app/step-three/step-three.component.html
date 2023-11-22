@@ -26,11 +26,15 @@
 
         <span class="text-xs text-slate-400 font-black">{{ addon.text }} </span>
       </div>
+
+      <!-- MONTHLY BILLING -->
       <span
         *ngIf="billing === 'monthly'"
         class="text-purple-500 text-lg font-bold flex justify-end"
         >+{{ addon.price | currency : "USD" : "symbol" : "1.0-0" }}/mo</span
       >
+
+      <!-- YEARLY BILLING -->
       <span
         *ngIf="billing === 'yearly'"
         class="text-purple-500 text-lg font-bold flex justify-end"

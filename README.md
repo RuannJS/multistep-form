@@ -1,27 +1,41 @@
-# MultistepForm
+# Multi-Step Form Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+[![Vercel Status](https://vercel.com/your-username/your-project-name/badge.svg)](https://vercel.com/your-username/your-project-name)
+[![Build Status](https://travis-ci.org/your-username/your-repo.svg?branch=master)](https://travis-ci.org/your-username/your-repo)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+...
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Welcome to the Multi-Step Form Challenge! The goal of this challenge is to build a multi-step form that allows users to seamlessly progress through each step, make selections, go back to update their choices, and finally, confirm their order. Additionally, the form should provide a responsive design for optimal viewing on various devices.
 
-## Build
+## Technologies Used
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular**
+- **Tailwind CSS**
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Features
 
-## Running end-to-end tests
+- **Step-by-Step Progression:**
+  Users can navigate through each step of the form, completing the required information at their own pace.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Back Navigation:**
+  Users can easily go back to previous steps to update or change their selections.
 
-## Further help
+- **Summary Confirmation:**
+  On the final step, users can review a summary of their selections before confirming their order.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Responsive Design:**
+  The form layout adjusts to provide an optimal viewing experience on different screen sizes and devices.
+
+- **Interactive Elements:**
+  All interactive elements, such as buttons, should have hover and focus states for a better user experience.
+
+- **Form Validation:**
+  Users receive clear validation messages if:
+    - A required field has been missed.
+    - The email address is not formatted correctly.
+    - A step is submitted without making any selection.
+

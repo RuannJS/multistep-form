@@ -1,11 +1,6 @@
 # Multi-Step Form Challenge
 
-
-
-[![Vercel Status](https://vercel.com/your-username/your-project-name/badge.svg)](https://vercel.com/your-username/your-project-name)
-[![Build Status](https://travis-ci.org/your-username/your-repo.svg?branch=master)](https://travis-ci.org/your-username/your-repo)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-...
+ https://multistep-form-olive.vercel.app/
 
 
 Welcome to the Multi-Step Form Challenge! The goal of this challenge is to build a multi-step form that allows users to seamlessly progress through each step, make selections, go back to update their choices, and finally, confirm their order. Additionally, the form should provide a responsive design for optimal viewing on various devices.

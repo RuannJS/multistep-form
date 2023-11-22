@@ -11,9 +11,10 @@ import { StepThreeComponent } from './step-three/step-three.component';
 import { StepFourComponent } from './step-four/step-four.component';
 import { ThanksComponent } from './thanks/thanks.component';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, StepOneComponent, StepTwoComponent, StepThreeComponent, StepFourComponent, ThanksComponent, HomeComponent],
+  declarations: [AppComponent, StepOneComponent, StepTwoComponent, StepThreeComponent, StepFourComponent, ThanksComponent, HomeComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     NgOptimizedImage,

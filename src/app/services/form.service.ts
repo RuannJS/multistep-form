@@ -22,6 +22,10 @@ export class FormService {
     },
   };
 
+  redirectNotFound() {
+    this.router.navigate(['']);
+  }
+
   start() {
     this.router.navigate(['1']);
   }

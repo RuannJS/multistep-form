@@ -1,30 +1,79 @@
-<main class="relative bg-blue-300">
-  <!-- PAGINATOR -->
-  <div>
+<main class="relative bg-blue-300 xl:bg-blue-100">
+  <!-- PAGINATOR  -->
+  <!-- 1280px LESS -->
+  <div class="w-96 xs:w-full xl:hidden">
     <img
+      class="xs:w-full"
       width="430"
       height="172"
       priority
       ngSrc="../assets/bg-sidebar-mobile.svg"
       alt=""
     />
-    <div class="flex flex-row gap-5 items-center absolute top-14 left-28">
+    <div
+      class="flex flex-row gap-3 items-center absolute top-14 left-24 xs:left-28 sm:left-52 md:left-64 lg:left-96"
+    >
       <button
-        class="py-1 px-3 text-2xl rounded-full font-bold text-white border border-white"
+        class="py-1 px-3 text-3xl rounded-full font-bold text-white border border-white sm:text-5xl"
         *ngFor="let step of steps"
-        [routerLink]="step"
+        [routerLink]="step.step"
         [routerLinkActive]="['bg-blue-300']"
         type="button"
         disabled
       >
-        {{ step }}
+        {{ step.step }}
       </button>
     </div>
   </div>
-
-  <article class="absolute top-32 px-10">
-    <div class="bg-white p-3 rounded-lg">
-      <router-outlet></router-outlet>
+  <article class="absolute top-32 px-10 lg:px-28 lg:top-52 xl:hidden">
+    <div class="bg-white p-3 rounded-lg lg:px-28">
+      <router-outlet *ngIf="1280 > getScreenWidth"></router-outlet>
     </div>
   </article>
+
+  <!-- GREATER THAN 1280px -->
+
+  <div class="hidden xl:p-24 xl:block 2xl:px-80">
+    <div class="relative bg-white flex flex-row rounded-lg">
+      <img
+        class="h-full"
+        ngSrc="../assets/bg-sidebar-desktop.svg"
+        width="300"
+        height="570"
+        priority
+        alt=""
+      />
+
+      <div class="absolute top-0 p-5">
+        <div class="flex flex-col gap-5">
+          <div
+            *ngFor="let step of steps"
+            class="flex flex-row items-center gap-3"
+          >
+            <button
+              class="py-1 px-3 text-3xl rounded-full font-bold text-white border border-white sm:text-5xl"
+              [routerLink]="step.step"
+              [routerLinkActive]="['bg-blue-300']"
+              type="button"
+              disabled
+            >
+              {{ step.step }}
+            </button>
+            <div class="flex flex-col">
+              <span class="text-sm text-slate-300 font-bold"
+                >{{ "step" | uppercase }} {{ step.step }}</span
+              >
+              <span class="text-lg text-white font-black">{{
+                step.text | uppercase
+              }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-10 2xl:p-24">
+        <router-outlet *ngIf="getScreenWidth >= 1280"></router-outlet>
+      </div>
+    </div>
+  </div>
 </main>

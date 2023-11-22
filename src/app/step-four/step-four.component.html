@@ -10,7 +10,9 @@
         <span class="text-base text-blue-950 font-black"
           >{{ plan.type }} ({{ plan.billing }})</span
         >
-        <span class="underline text-sm text-slate-400">Change</span>
+        <span (click)="changePlan()" class="underline text-sm text-slate-400"
+          >Change</span
+        >
       </div>
 
       <span

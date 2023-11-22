@@ -36,6 +36,10 @@ export class StepFourComponent implements OnInit {
     return addonTotal + planPrice;
   }
 
+  changePlan() {
+    this.service.backToStepTwo();
+  }
+
   goBack() {
     this.service.backToStepThree();
   }

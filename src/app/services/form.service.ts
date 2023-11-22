@@ -22,6 +22,10 @@ export class FormService {
     },
   };
 
+  start() {
+    this.router.navigate(['1']);
+  }
+
   stepOne(name: string, email: string, phone: string) {
     this.completeForm.user = { name, email, phone };
     this.router.navigate(['2']);
@@ -76,6 +80,14 @@ export class FormService {
     });
 
     this.router.navigate(['4']);
+  }
+
+  backToStepThree() {
+    this.router.navigate(['3']);
+  }
+
+  confirm() {
+    this.router.navigate(['thanks']);
   }
 
   //

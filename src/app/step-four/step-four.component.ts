@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormService } from '../services/form.service';
 import { SelectPlan } from '../models/plan-model';
-import { Addon, SelectedAddons } from '../models/addon-model';
+import { SelectedAddons } from '../models/addon-model';
 
 @Component({
   selector: 'app-step-four',
@@ -34,5 +34,13 @@ export class StepFourComponent implements OnInit {
     }
 
     return addonTotal + planPrice;
+  }
+
+  goBack() {
+    this.service.backToStepThree();
+  }
+
+  confirm() {
+    this.service.confirm();
   }
 }
